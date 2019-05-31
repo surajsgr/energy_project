@@ -1,0 +1,82 @@
+{% extends "projects/base.html" %}
+{% load static %}
+
+{% block content %}
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            {% if project %}
+              <a class="navbar-brand mr-4" href="">{{ project.title }}</a>
+            {% endif %}
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggle">
+
+            <div class="navbar-nav mr-auto">
+
+
+
+
+
+
+
+                     <a class="nav-item nav-link" href="{% url 'wind_visualisation'  %}">Visualisation</a>
+                     <a class="nav-item nav-link" href="{% url 'wind_model' %}">Model</a>
+
+            </div>
+
+
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if project %}
+                <a class="nav-item nav-link" href="{% url 'project_index' %}">Projects</a>
+
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+<div class="row">
+    <div class="col-md-20">
+        <h5>OverView of Wind Energy Production :</h5>
+
+        <p>The supply and the consumption of renewable energy is expected to rise significantly over the next 35 years and wind energy production plays very important role in it as it is one of the best renewable energy sources available. Weather plays an important role in explaining electrical energy production and energy consumption fluctuations. Throughout the year, the use of electricity varies significantly as the seasons change and bring new types of weather conditions.
+        </p>
+
+        <br>
+
+        <h5> Goal :</h5>
+
+        <p>Knowing the expected production output and consumption needs during any given hour, it will be easier to determine how much renewable electrical energy will be supplemented to the local power supply.
+</p>
+        <h5>Data</h5>
+
+        <p>Power City has provided you with a number of datasets that may use to help create good, comprehensive models for forecasting energy production:
+            . Wind Farm energy production
+                   Energy generated from a wind farm over the course of a 22-month period
+                   (March 2011 to December 2012)
+            .  Wind Farm weather
+            Actual recorded weather variables at the location of the wind turbine during the same 22-month period
+</p>
+        <h5>Method to forecast wind energy production </h5>
+
+        <p>Data Preprocessing: Visualize, cleaning, normalizing, and merging of the data</p>
+
+        <br>
+        <h6>Models:</h6>
+        <p>Forecast the renewable wind electrical energy production by trying different models such as Linear Regression, Ridge Regression, Lasso Regression, Elastic Net Regression, Random Forest, Decision tree etc.
+</p>
+        <br>
+        <h6>Final Model </h6>
+        <p>After the parameter tuning, Linear Regression Model with highest Adjusted-R square is selected to predict the wind energy production.
+</p>
+
+
+    </div>
+
+</div>
+{% endblock content %}

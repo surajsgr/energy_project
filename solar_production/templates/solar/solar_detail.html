@@ -1,0 +1,95 @@
+{% extends "projects/base.html" %}
+{% load static %}
+
+{% block content %}
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            {% if project %}
+              <a class="navbar-brand mr-4" href="">{{ project.title }}</a>
+            {% endif %}
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggle">
+
+            <div class="navbar-nav mr-auto">
+
+
+
+
+
+
+
+                     <a class="nav-item nav-link" href="{% url 'solar_visualisation'  %}">Visualisation</a>
+                     <a class="nav-item nav-link" href="{% url 'solar_model' %}">Model</a>
+
+            </div>
+
+
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if project %}
+                <a class="nav-item nav-link" href="{% url 'project_index' %}">Projects</a>
+
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+<div class="row">
+    <div class="col-md-20">
+
+
+
+        <h5>OverView of Project:</h5>
+        <p>The supply and the consumption of renewable energy is expected to rise significantly over the next 35 years. During this timeframe, energy capacity additions will likely increase most in the use of natural gas and renewable sources. Of the renewable capacity growth, photovoltaic solar is projected to rise at the highest rate. The rate at which renewable energy use will rise is dependent on several factors, including the price of natural gas into the future, the implementation of policies aiming at reducing greenhouse gas emissions, and advances in renewable energy technology. The electrical energy output from photovoltaic solar panel array varies greatly from hour-to-hour depending on the weather conditions and the position of the sun. For the solar panel array location, additional weather variables during the corresponding time frame are included. These variables summarize the measurements of temperature, precipitation, cloud cover, cloud ceiling, visibility, and humidity.
+         </p>
+        <br>
+        <h5>Goal:</h5>
+        <p>Weather plays an important role in explaining electrical energy production and energy consumption fluctuations. Hence, Power City’s long-term goal is to forecast hourly electrical energy production and consumption for the entire city.
+</p>
+        <br>
+        <h5>Data</h5>
+        <br>
+        <h6>SolarArray_Production:</h6>
+        <p>Energy generated from a solar array over the course of a 56- month period (January 2010 to August 2014). Contains 3 Columns and 18,704 Rows.
+• Date • Hour: Numeric hour (1-24) • Electricity_KW_HR: Hourly power output of solar energy in Kilowatts
+
+</p>
+        <br>
+        <h6>SolarArray_SolarAngle:</h6>
+        <p>Solar Elevation during each hour at the solar array during the production timeframe. Contains 6 Columns and 40,820 Rows.
+• City • Year • Month • Day • Hour • Solar_Elevation: The solar elevation (angle) is the altitude of the sun, measured as the angle between the horizon and the center of the sun's disc.
+</p>
+        <h6>SolarArray_Weather:</h6>
+
+        <p>Hourly weather variables at the solar array location during the timeframe of production. Contains 13 Columns and 41,322 Rows.
+• Location • Year • Day • Hour • Cloud_Cover_Fraction • Dew_Point • Humidity_Fraction • Precipitation • Pressure • Temperature • Visibility • Wind_Speed
+
+</p>
+        <br>
+        <h5>Method to forecast the Solar energy production:
+</h5>
+
+        <p>Data Preprocessing: Visualize, clean, normalize, and merge the data</p>
+
+        <h6>Models:</h6>
+
+        <p>Forecast the solar energy production by trying different models such as Multiple Linear Regression
+model, Ridge Regression, Lasso Regression, Elastic Net Regression. Random forest etc.
+</p>
+
+        <h6>Final Model:
+</h6>
+
+        <p>After the parameter tuning and feature engineering, Multiple Linear Regression Model with highest
+Adjusted-R square is selected to predict the solar energy production.
+</p>
+
+    </div>
+</div>
+{% endblock content %}

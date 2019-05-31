@@ -1,0 +1,25 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% block content %}
+<!--<h1>Projects</h1>-->
+<br><br><br>
+<div class="row">
+
+
+    <br><br><br><br><br>
+    <div class="col-md-12">
+        <div class="card mb-3">
+            {% if project.id is 1 %}
+           <a class="btn btn-primary btn-lg btn-block" href="" role="botton">Energy Consumption</a>
+            {% elif project.id is 2 %}
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'solar_detail' project.pk %}" role="botton">Solar Energy Production</a>
+            {% elif project.id is 3 %}
+            <a class="btn btn-primary btn-lg btn-block" href="" role="botton">Wind Energy Production</a>
+            {% endif %}
+
+
+        </div>
+    </div>
+
+</div>
+{% endblock content%}

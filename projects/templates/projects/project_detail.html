@@ -1,0 +1,80 @@
+{% extends "projects/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            {% if project %}
+              <a class="navbar-brand mr-4" href="">{{ project.title }}</a>
+            {% endif %}
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggle">
+
+            <div class="navbar-nav mr-auto">
+
+
+
+
+
+
+
+                     <a class="nav-item nav-link" href="{% url 'visualisation'  %}">Visualisation</a>
+                     <a class="nav-item nav-link" href="{% url 'model' %}">Model</a>
+
+            </div>
+
+
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              <!--{% if project %}-->
+                <a class="nav-item nav-link" href="{% url 'project_index' %}">Projects</a>
+
+
+              <!--{% endif %}-->
+            </div>
+          </div>
+        </div>
+      </nav>
+<div class="row">
+    <div class="col-md-20">
+        <h5>About the project:</h5>
+        <p>According to the US Energy Information Administration, the share of renewable energy used in the US could rise from 13 percent in 2011 anywhere up to 16 to 31 percent in 2040.</p>
+         <p>Electrical energy consumption is dependent on a number of factors, including weather, population, sectors of city , date/time,  and type of day. Throughout the year, the use of electricity varies significantly as the seasons change and being new types of weather conditions. Hourly changes in the weather may also play a role in the amount of electrical energy used. Another driving factor in the amount of electrical energy used in a city during a given hour of the day is population. As the population of a city rises, so does the amount of electrical energy being consumed. Furthermore, people tend to have a daily cycle of events that are highly related to their age and stage in life. For example, most of the school-aged children in the city  would be attending the class, thus resulting in the higher electrical energy consumption in schools during the daytime hours. As such, the hourly electrical consumption of each city sector may vary depending on the population that uses the sectors, as well as the total number of occupants at a given time.
+         </p>
+        <br>
+        <h5>Goal:</h5>
+        <p>Power City’s long-term goal is to forecast hourly electrical energy production and consumption for the entire city. Here, our work shows to visualize the energy consumption data and to build the models that forecast the total electrical consumption by hour for 8 key sectors of the city.
+</p>
+        <br>
+        <h5>Data</h5>
+        <p>Power City’s long-term goal is to forecast hourly electrical energy production and consumption for the entire city. Here, our work shows to visualize the energy consumption data and to build the models that forecast the total electrical consumption by hour for 8 key sectors of the city.
+</p>
+
+        <ul class="list-group">
+                <li>One year of hourly energy consumption by square foot for 8 city sectors of Power City:</li>
+                <li>Food Service, Grocery, Education K-12, Lodging, Office, Residential, Stand-alone Retail</li>
+                <li>Food Service, Grocery, Education K-12, Lodging, Office, Residential, Stand-alone Retail</li>
+                <li>Population segments:</li>
+                <li>Building Type Matrix</li>
+                <li>Calendar Table:</li>
+              </ul>
+        <br>
+        <h5>Method to forecast the energy consumption:</h5>
+        <p>Data Preprocessing:  Visualize , clean, normalize, and merge the data</p>
+        <h6>Models:</h6>
+        <p>Forecast the Electrical energy consumption by trying different models such as Multiple Linear Regression model, Ridge Regression, Lasso Regression, Elastic Net Regression.
+</p>
+        <h6>Final Model:</h6>
+        <p>After the parameter tuning and feature engineering, Multiple Linear Regression Model with highest Adjusted-R square is selected to predict the energy consumption.
+</p>
+
+    </div>
+</div>
+{% endblock content %}

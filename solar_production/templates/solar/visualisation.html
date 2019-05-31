@@ -1,0 +1,57 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% block content %}
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <!--{% if project %}-->
+              <!--<a class="navbar-brand mr-4" href="{% url 'solar_detail' %}">Overview</a>-->
+            <!--{% endif %}-->
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggle">
+
+            <div class="navbar-nav mr-auto">
+
+
+
+
+
+                     <a class="nav-item nav-link" href="{% url 'solar_detail'  %}">OverView</a>
+                     <a class="nav-item nav-link" href="{% url 'solar_visualisation'  %}">Visualisation</a>
+                     <a class="nav-item nav-link" href="{% url 'solar_model' %}">Model</a>
+
+            </div>
+
+
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if project %}
+                <a class="nav-item nav-link" href="{% url 'project_index' %}">Projects</a>
+
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+<div class="row">
+    <h5> Please find the below Visualisation </h5>
+
+    <img src="{% static "solar/visualisation_1.PNG" %}" alt="My image1">
+
+    <p>The heat map above depicts information on solar energy production for different months of daytime over multiple years starting 2010 till 2014.
+        It is very clear from the heat map that most of the electricity is being produced in the afternoons of summer months.</p>
+    <img src="{% static "solar/visualisation_2.PNG" %}" alt="My image2">
+    <p>The heat map above is more detailed version of main heat map being just summer months of one-year 2010.
+        Where low electricity production has been seen which is due to cloud coverage.</p>
+    <img src="{% static "solar/visualisation_3.PNG" %}" alt="My image3">
+    <p>The heat map above depicts the cloud coverage of summer months for the year 2010 supporting the heat map of electricity produced for the same time frame.</p>
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+.env
+.log
+.csv
+.pyc
+.DS_Store
+.idea
+
+*.log
+*.csv
+*.pyc
