@@ -8,15 +8,15 @@ Y = (1005.0092 * Solar Elevation) + ( -1.643e+04 * Cloud_Cover_Fraction) + (-166
 class solar(models.Model):
 
 
-    Solar_Elevation=models.FloatField(validators=[MinValueValidator(-68.228767),MaxValueValidator(69.360406)])
-    Cloud_Cover_Fraction=models.FloatField(validators=[MinValueValidator(0),MaxValueValidator(1)])
-    Dew_Point=models.FloatField(validators=[MinValueValidator(-27.20),MaxValueValidator(40)])
-    Humidity_Fraction=models.FloatField(validators=[MinValueValidator(0.144500),MaxValueValidator(1)])
-    Precipitation=models.FloatField(validators=[MinValueValidator(0),MaxValueValidator(41.1)])
-    Pressure=models.FloatField(validators=[MinValueValidator(958.400),MaxValueValidator(1011.200)])
-    Temperature=models.FloatField(validators=[MinValueValidator(-23),MaxValueValidator(50)])
-    Visibility=models.FloatField(validators=[MinValueValidator(0),MaxValueValidator(16.0930)])
-    WindSpeed=models.FloatField(validators=[MinValueValidator(0),MaxValueValidator(18.500)])
+    Solar_Elevation=models.FloatField(default='',validators=[MinValueValidator(-68.228767),MaxValueValidator(69.360406)])
+    Cloud_Cover_Fraction=models.FloatField(default='',validators=[MinValueValidator(0),MaxValueValidator(1)])
+    Dew_Point=models.FloatField(default='',validators=[MinValueValidator(-27.20),MaxValueValidator(40)])
+    Humidity_Fraction=models.FloatField(default='',validators=[MinValueValidator(0.144500),MaxValueValidator(1)])
+    Precipitation=models.FloatField(default='',validators=[MinValueValidator(0),MaxValueValidator(41.1)])
+    Pressure=models.FloatField(default='',validators=[MinValueValidator(958.400),MaxValueValidator(1011.200)])
+    Temperature=models.FloatField(default='',validators=[MinValueValidator(-23),MaxValueValidator(50)])
+    Visibility=models.FloatField(default='',validators=[MinValueValidator(0),MaxValueValidator(16.0930)])
+    WindSpeed=models.FloatField(default='',validators=[MinValueValidator(0),MaxValueValidator(18.500)])
 
 
 

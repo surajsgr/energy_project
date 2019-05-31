@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator,MaxValueValidator
 
 class Wind(models.Model):
 
-    WindSpeed=models.FloatField(validators=[MinValueValidator(0.200),MaxValueValidator(30)])
+    WindSpeed=models.FloatField(default='',validators=[MinValueValidator(0.200),MaxValueValidator(30)])
 
 
 
