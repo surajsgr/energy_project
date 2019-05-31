@@ -26,7 +26,7 @@ class energy(models.Model):
     Sector_office=models.FloatField( default='',validators=[MinValueValidator(0), MaxValueValidator(1)])
     Sector_residental=models.FloatField( default='',validators=[MinValueValidator(0), MaxValueValidator(1)])
     Sector_STAND_ALONE_RETAIL=models.FloatField( default='',validators=[MinValueValidator(0), MaxValueValidator(1)])
-    Solar_Elevation=models.FloatField( default='',validators=[MinValueValidator(0), MaxValueValidator(1)])
+    # Solar_Elevation=models.FloatField( default='',validators=[MinValueValidator(0), MaxValueValidator(1)])
 
     
 class Project(models.Model):
