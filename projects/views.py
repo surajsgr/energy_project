@@ -88,7 +88,7 @@ def energy(request,pk=1):
         form = EnergyForm()
     return render(request, 'projects/energy.html', {'form': form,'project':project})
 
-
+print("")
 def visualisation(request,pk=1):
 
     project = Project.objects.get(pk=1)
